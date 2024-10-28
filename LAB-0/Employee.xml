@@ -4,7 +4,15 @@
             <firstName> John </firstNamename>
             <lastName> Doe </lastName>
         </name>
-        <address>H# 38, R#3, Banani, Dhaka</address>
+
+        <address>
+            <houseNo>38</houseNo>
+            <flatNo></flatNo>
+            <road>3</road>
+            <area>Banani</area>
+            <district>Dhaka</district>
+
+        </address>
         <department>Sales</department>
         <salary>$20000</salary>
     </employee>
@@ -14,7 +22,13 @@
             <firstName> Mark </firstNamename>
             <lastName> Zuckerberg </lastName>
         </name>
-        <address>Flat# A/1, H# 20, R#18, Mirpur, Dhaka</address>
+        <address>
+            <houseNo>20</houseNo>
+            <flatNo>A/1</flatNo>
+            <road>18</road>
+            <area>Mirpur</area>
+            <district>Dhaka</district>
+        </address>
         <department>Accounts</department>
         <salary>$12000</salary>
     </employee>
@@ -24,7 +38,13 @@
             <firstName> Ala </firstNamename>
             <lastName> Voski </lastName>
         </name>
-        <address>H# 38, R#3, Motijheel </address>
+        <address>
+            <houseNo>38</houseNo>
+            <flatNo></flatNo>
+            <road>3</road>
+            <area>Motijheel</area>
+            <district></district>
+        </address>
         <department>Human Resource</department>
         <salary>$30000</salary>
     </employee>
