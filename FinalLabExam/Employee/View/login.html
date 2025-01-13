@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm" method="post" action="../controller/employee.php" enctype="">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" name="Login" value="Login">
+    </form>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) { 
+            event.preventDefault();
+            var username = document.getElementById('username').value; 
+            sessionStorage.setItem('username', username); 
+            window.location.href = 'dashboard.html'; 
+        });
+    </script>
+</body>
+</html>
