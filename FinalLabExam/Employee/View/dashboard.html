@@ -55,7 +55,7 @@
             const password = document.getElementById('updatePassword').value;
 
             const xhttp = new XMLHttpRequest();
-            xhttp.open('POST', 'employee.php', true);
+            xhttp.open('POST', '../controller/update.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
@@ -70,7 +70,7 @@
 
         function updateUser(username) {
             const xhttp = new XMLHttpRequest();
-            xhttp.open('POST', 'employee.php', true);
+            xhttp.open('POST', '../controller/get_user.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
@@ -87,7 +87,7 @@
 
         function deleteUser(username) {
             const xhttp = new XMLHttpRequest();
-            xhttp.open('POST', 'employee.php', true);
+            xhttp.open('POST', '../controller/delete.php', true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {

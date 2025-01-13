@@ -1,5 +1,5 @@
 <?php
-include('../Model/usermodel.php');
+require('../Model/usermodel.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $searchTerm = $_POST['search'];
