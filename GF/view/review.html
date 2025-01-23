@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Review</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit a Review</h1>
+        <form action="../model/process.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>Select a rating</option>
+                <option value="5 Stars">5 Stars</option>
+                <option value="4 Stars">4 Stars</option>
+                <option value="3 Stars">3 Stars</option>
+                <option value="2 Stars">2 Stars</option>
+                <option value="1 Star">1 Star</option>
+            </select>
+
+            <label for="message">Review:</label>
+            <div class="options">
+                <label>
+                    <input type="radio" name="message" value="Excellent service" required> Excellent service
+                </label>
+                <label>
+                    <input type="radio" name="message" value="Good quality"> Good quality
+                </label>
+                <label>
+                    <input type="radio" name="message" value="Average experience"> Average experience
+                </label>
+                <label>
+                    <input type="radio" name="message" value="Poor service"> Poor service
+                </label>
+                <label>
+                    <input type="radio" name="message" value="Terrible experience"> Terrible experience
+                </label>
+            </div>
+
+            <label for="datetime">Date and Time:</label>
+            <input 
+                type="datetime-local" 
+                id="datetime" 
+                name="datetime" 
+                value="<?php echo date('Y-m-d\TH:i'); ?>" 
+                required>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+</body>
+</html>

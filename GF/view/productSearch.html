@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Product Search</title>
+</head>
+<body>
+    <h1>Product Search</h1>
+    <form method="get" action="searchResults.php">
+        Search Query: <input type="text" name="search_query" value="" /> <br>
+        Category: 
+        <select name="category">
+            <option value="all">All</option>
+            <option value="reusable">Reusable</option>
+            <option value="organic">Organic</option>
+            <option value="green_tech">Green Tech</option>
+            <option value="recycling">Recycling</option>
+        </select> <br>
+        Price Range: 
+        <select name="price_range">
+            <option value="all">All</option>
+            <option value="0-50">$0 - $50</option>
+            <option value="51-100">$51 - $100</option>
+            <option value="101-200">$101 - $200</option>
+            <option value="200+">$200+</option>
+        </select> <br>
+        Eco-Certifications: 
+        <select name="eco_certifications">
+            <option value="any">Any</option>
+            <option value="fair_trade">Fair Trade</option>
+            <option value="energy_star">Energy Star</option>
+            <option value="organic">Organic Certified</option>
+            <option value="recyclable">Recyclable Material</option>
+        </select> <br>
+        <input type="submit" name="search" value="Search" />
+    </form>
+</body>
+</html>

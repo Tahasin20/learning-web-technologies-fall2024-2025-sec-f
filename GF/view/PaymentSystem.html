@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Payment System</title>
+</head>
+<body>
+    <h1>Payment System</h1>
+    <form method="post" action="processPayment.php">
+        <!-- Input fields for card payment -->
+        Card Number: <input type="text" name="card_number" placeholder="Enter your card number" /> <br><br>
+        Expiration Date: <input type="month" name="expiration_date" /> <br><br>
+        CVV: <input type="text" name="cvv" placeholder="Enter CVV" maxlength="3" /> <br><br>
+        Billing Address: <input type="text" name="billing_address" placeholder="Enter billing address" /> <br><br>
+
+        <!-- Dropdown for Payment Method -->
+        Payment Method: 
+        <select name="payment_method">
+            <option value="bkash">bKash</option>
+            <option value="nagad">Nagad</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+        </select> <br><br>
+
+        <!-- Submit button -->
+        <input type="submit" name="pay_now" value="Pay Now" />
+    </form>
+</body>
+</html>

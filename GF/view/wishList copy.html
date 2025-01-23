@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .wishlist-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .wishlist-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+        }
+        .wishlist-item .details {
+            flex-grow: 1;
+        }
+        .wishlist-item button {
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .wishlist-item .add-to-cart {
+            background-color: green;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Wishlist</h1>
+
+    <div id="wishlistContainer">
+        <p>Loading your wishlist...</p>
+    </div>
+
+    <script>
+
+        function fetchWishlist() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET', '../controller/getWishlist.php', true);
+            xhttp.onload = function () {
+                if (this.status === 200) {
+                    const wishlist = JSON.parse(this.responseText);
+                    displayWishlist(wishlist);
+                } else {
+                    document.getElementById('wishlistContainer').innerHTML = "<p>Failed to load wishlist.</p>";
+                }
+            };
+            xhttp.send();
+        }
+
+        function displayWishlist(wishlist) {
+            const container = document.getElementById('wishlistContainer');
+            if (wishlist.length === 0) {
+                container.innerHTML = "<p>Your wishlist is empty.</p>";
+                return;
+            }
+
+            let html = '';
+            wishlist.forEach(item => {
+                html += `
+                    <div class="wishlist-item">
+                        <img src="${item.image_url}" alt="Product Image">
+                        <div class="details">
+                            <p><strong>${item.product_name}</strong></p>
+                            <p>Price: $${item.price.toFixed(2)}</p>
+                        </div>
+                        <form method="post" action="../controller/removeFromWishlist.php" style="display:inline;">
+                            <input type="hidden" name="wishlist_id" value="${item.wishlist_id}">
+                            <button type="submit">Remove</button>
+                        </form>
+                        <form method="post" action="../controller/addToCart.php" style="display:inline;">
+                            <input type="hidden" name="product_id" value="${item.product_id}">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+        document.addEventListener('DOMContentLoaded', fetchWishlist);
+    </script>
+</body>
+</html>

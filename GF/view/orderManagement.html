@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Order Management</title>
+</head>
+<body>
+    <h1>Order Management</h1>
+    <form method="post" action="orderManagement.php">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Order Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row, replace with server-side code (e.g., PHP, Node.js) to dynamically generate rows -->
+                <tr>
+                    <td>
+                        <input type="hidden" name="order_id[]" value="001" />
+                        001
+                    </td>
+                    <td>Reusable Bottle</td>
+                    <td>$15.99</td>
+                    <td>Shipped</td>
+                    <td>
+                        <button type="submit" name="action" value="cancel_001" disabled>Cancel Order</button>
+                        <button type="submit" name="action" value="download_001">Download Invoice</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="order_id[]" value="002" />
+                        002
+                    </td>
+                    <td>Organic T-shirt</td>
+                    <td>$25.50</td>
+                    <td>Processing</td>
+                    <td>
+                        <button type="submit" name="action" value="cancel_002">Cancel Order</button>
+                        <button type="submit" name="action" value="download_002">Download Invoice</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
